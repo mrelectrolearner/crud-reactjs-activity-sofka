@@ -35,6 +35,7 @@ function AppUI() {
           <TodoItem
             key={todo.text}
             text={todo.text}
+            dueDate={todo.dueDate}
             completed={todo.completed}
             onComplete={() => completeTodo(todo.text)}
             onDelete={() => deleteTodo(todo.text)}

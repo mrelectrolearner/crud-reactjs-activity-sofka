@@ -9,15 +9,16 @@ function TodoForm() {
     setOpenModal,
   } = React.useContext(TodoContext);
   
+
   const onChange = (event) => {
-    setNewTodoValue(event.target.value);
+    setNewTodoValue({...newTodoValue,[event.target.name]:event.target.value});
   };
   const onCancel = () => {
     setOpenModal(false);
   };
   const onSubmit = (event) => {
     event.preventDefault();
-    addTodo(newTodoValue);
+    addTodo(newTodoValue.text,newTodoValue.dueDate);
     setOpenModal(false);
   };
 
@@ -25,10 +26,12 @@ function TodoForm() {
     <form onSubmit={onSubmit}>
       <label>Escribe tu nuevo TODO</label>
       <textarea
-        value={newTodoValue}
+        name="text"
+        value={newTodoValue.text}
         onChange={onChange}
         placeholder="Cortar la cebolla oara el almuerzo"
       />
+      <input type="date" id="dueDate" name="dueDate" onChange={onChange}></input>
       <div className="TodoForm-buttonContainer">
         <button
           type="button"

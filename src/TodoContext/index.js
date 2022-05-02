@@ -28,11 +28,12 @@ function TodoProvider(props) {
     });
   }
 
-  const addTodo = (text) => {
+  const addTodo = (text,dueDate) => {
     const newTodos = [...todos];
     newTodos.push({
       completed: false,
       text,
+      dueDate
     });
     saveTodos(newTodos);
   };
