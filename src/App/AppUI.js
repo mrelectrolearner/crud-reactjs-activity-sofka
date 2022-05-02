@@ -13,6 +13,7 @@ function AppUI() {
     error,
     loading,
     searchedTodos,
+    searchValue,
     completeTodo,
     deleteTodo,
     openModal,
@@ -27,7 +28,8 @@ function AppUI() {
       <TodoList>
         {error && <p>Desespérate, hubo un error...</p>}
         {loading && <p>Estamos cargando, no desesperes...</p>}
-        {(!loading && !searchedTodos.length) && <p>¡Crea tu primer TODO!</p>}
+        {(!loading && !(searchedTodos.length)&&!searchValue.length) && <p>¡Crea tu primer TODO!</p>}
+        {(!loading && !(searchedTodos.length)&& searchValue.length>0) && <p>¡Uy mano ese TODO no esta!</p>}
         
         {searchedTodos.map(todo => (
           <TodoItem

@@ -6,7 +6,6 @@ function TodoItem(props) {
     <li className="TodoItem">
       <span
         className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
-       
       >
         <input type="checkbox"  onClick={props.onComplete} ></input>
       </span>
@@ -17,7 +16,7 @@ function TodoItem(props) {
         className="Icon Icon-delete"
         onClick={props.onDelete}
       >
-        X
+        [X]
       </span>
     </li>
   );
