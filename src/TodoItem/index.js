@@ -7,11 +7,14 @@ function TodoItem(props) {
       <span
         className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
       >
-        <input type="checkbox"  onClick={props.onComplete} ></input>
+        <input type="checkbox" checked={props.completed} onChange={props.onComplete} ></input>
       </span>
-      <p className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}>
+      <label className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}>
         {props.text}
-      </p>
+      </label>
+      <label className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}>
+        due date:{props.dueDate}
+      </label>
       <span
         className="Icon Icon-delete"
         onClick={props.onDelete}
