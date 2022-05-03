@@ -31,6 +31,7 @@ function TodoForm() {
         onChange={onChange}
         placeholder="Cortar la cebolla oara el almuerzo"
       />
+      <label>Due date:</label>
       <input type="date" id="dueDate" name="dueDate" onChange={onChange}></input>
       <div className="TodoForm-buttonContainer">
         <button
